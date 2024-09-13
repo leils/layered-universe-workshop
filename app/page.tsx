@@ -8,8 +8,7 @@ function Model() {
   // CHANGE MODEL
   const { scene } = useGLTF("/tiger/scene.gltf");
   // const { scene } = useFBX("/tiger/scene.fbx");
-  ////////////////
-  
+    
   useMemo(() => {
     scene.traverse((child) => {
       if (child.isMesh) {
