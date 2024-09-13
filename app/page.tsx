@@ -6,8 +6,9 @@ import { Environment, Center, AccumulativeShadows, RandomizedLight, OrbitControl
 
 function Model() {
   // CHANGE MODEL
-  const { scene } = useGLTF("/tiger/scene.gltf");
-  // const { scene } = useFBX("/tiger/scene.fbx");
+  //const { scene } = useGLTF("/tiger/scene.gltf");
+   const { scene } = useGLTF("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/suzanne-high-poly/model.gltf");
+
     
   useMemo(() => {
     scene.traverse((child) => {
