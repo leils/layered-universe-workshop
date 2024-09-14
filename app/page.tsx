@@ -1,7 +1,6 @@
 'use client'
 import React, { useMemo } from 'react'
 import { Canvas } from "@react-three/fiber";
-import { MeshStandardMaterial } from "three";
 import * as THREE from 'three'
 import { Environment, Center, AccumulativeShadows, RandomizedLight, OrbitControls, useGLTF, useFBX } from "@react-three/drei";
 

@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "The Layered Universe",
-  description: "Threejs and Google Cloud",
+  description: "React Three Fiber and Google Cloud Run",
 };
 
 export default function RootLayout({
