@@ -2,27 +2,27 @@
 import React, { useMemo } from 'react'
 import { Canvas } from "@react-three/fiber";
 import { MeshStandardMaterial } from "three";
+import * as THREE from 'three'
 import { Environment, Center, AccumulativeShadows, RandomizedLight, OrbitControls, useGLTF, useFBX } from "@react-three/drei";
 
 function Model() {
   // CHANGE MODEL
-  //const { scene } = useGLTF("/tiger/scene.gltf");
-   const { scene } = useGLTF("https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/suzanne-high-poly/model.gltf");
+  const { scene } = useGLTF("/tiger/scene.gltf");
 
-    
   useMemo(() => {
     scene.traverse((child) => {
-      if (child.isMesh) {
-        child.material = new MeshStandardMaterial({
+      if ((child as THREE.Mesh).isMesh) {
+        const meshChild = child as THREE.Mesh;
+        meshChild.material = new THREE.MeshStandardMaterial({
           color: 0xffd700,  // GOLD COLOR
           metalness: 1,
           roughness: 0.1,
-        })
-        child.castShadow = true
-        child.receiveShadow = true
+        });
+        meshChild.castShadow = true;
+        meshChild.receiveShadow = true;
       }
-    })
-  }, [scene])
+    });
+  }, [scene]);
 
   return <primitive object={scene} scale={1.5}/>
 }
