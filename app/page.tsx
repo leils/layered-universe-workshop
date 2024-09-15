@@ -2,12 +2,14 @@
 import React, { useMemo } from 'react'
 import { Canvas } from "@react-three/fiber";
 import * as THREE from 'three'
-import { Environment, Center, AccumulativeShadows, RandomizedLight, OrbitControls, useGLTF, useFBX } from "@react-three/drei";
+import { Environment, Center, AccumulativeShadows, RandomizedLight, OrbitControls, useGLTF, useFBX, } from "@react-three/drei";
+
 
 function Model() {
   // CHANGE MODEL
-  const { scene } = useGLTF("/tiger/scene.gltf");
-
+  // const { scene } = useGLTF("/tiger/scene.gltf");
+  // const { scene } = useGLTF("ring.glb");
+  const { scene } = useGLTF("/engraved_ring/scene.gltf");
   useMemo(() => {
     scene.traverse((child) => {
       if ((child as THREE.Mesh).isMesh) {
